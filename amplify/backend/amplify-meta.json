@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ekycadmin-dev-131643-authRole",
+      "UnauthRoleArn": "arn:aws:iam::794385572658:role/amplify-ekycadmin-dev-131643-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::794385572658:role/amplify-ekycadmin-dev-131643-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-ekycadmin-dev-131643-deployment",
+      "UnauthRoleName": "amplify-ekycadmin-dev-131643-unauthRole",
+      "StackName": "amplify-ekycadmin-dev-131643",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:794385572658:stack/amplify-ekycadmin-dev-131643/b24d54e0-64a4-11ed-bf8e-0a96976ac5f8",
+      "AmplifyAppId": "dpbh203p30pcj"
+    }
+  },
+  "auth": {
+    "ekycadmin03b37a89": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ekycadmin-dev-131643-deployment/amplify-cfn-templates/auth/ekycadmin03b37a89-cloudformation-template.json",
+        "logicalId": "authekycadmin03b37a89"
+      },
+      "lastPushTimeStamp": "2022-11-15T05:23:51.127Z",
+      "output": {
+        "UserPoolId": "ap-southeast-1_wP1E9Jg2d",
+        "AppClientIDWeb": "1v3dkh6dq1fvqd0tiunm6js2ae",
+        "AppClientID": "7h9c21ek75pdco3kh234pk1m2p",
+        "IdentityPoolId": "ap-southeast-1:941cdd1f-5f54-47dd-9a02-2c69dbe12c3b",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-southeast-1:794385572658:userpool/ap-southeast-1_wP1E9Jg2d",
+        "IdentityPoolName": "ekycadmin03b37a89_identitypool_03b37a89__dev",
+        "UserPoolName": "ekycadmin03b37a89_userpool_03b37a89"
+      },
+      "lastPushDirHash": "0mTSucxEeva9AksKeYov/2qRw70="
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ekycadmin-dev-131643-authRole",
+      "UnauthRoleArn": "arn:aws:iam::794385572658:role/amplify-ekycadmin-dev-131643-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::794385572658:role/amplify-ekycadmin-dev-131643-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-ekycadmin-dev-131643-deployment",
+      "UnauthRoleName": "amplify-ekycadmin-dev-131643-unauthRole",
+      "StackName": "amplify-ekycadmin-dev-131643",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:794385572658:stack/amplify-ekycadmin-dev-131643/b24d54e0-64a4-11ed-bf8e-0a96976ac5f8",
+      "AmplifyAppId": "dpbh203p30pcj"
+    },
+    "categories": {
+      "auth": {
+        "ekycadmin03b37a89": {}
+      }
+    }
+  }
+}
