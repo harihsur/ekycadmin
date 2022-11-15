@@ -1,10 +1,9 @@
+import { Amplify, Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import Amplify, { Auth } from 'aws-amplify';
-import { API } from 'aws-amplify';
+console.log(JSON.stringify(awsconfig));
+Amplify.configure(awsconfig);
 
 const ENDPOINT_URL = "https://oojeswkd0c.execute-api.ap-southeast-1.amazonaws.com/dev/v1";
-
-Amplify.configure(awsconfig);
 
 const loginButton = document.getElementById("login");
 const signupLink = document.getElementById("signup");
@@ -48,8 +47,10 @@ async function signIn() {
     try {
         //alert(document.getElementById("username").value)
         const user = await Auth.signIn(document.getElementById("username").value, document.getElementById("password").value);
+        console.log(JSON.stringify(user));
         localStorage.setItem('key', document.getElementById("username").value);
-        localStorage.setItem("type", document.getElementById("type").value)
+        localStorage.setItem("type", document.getElementById("type").value);
+        //const user = await Auth.signIn(username, password);
     } catch (error) {
         alert(error.message);
         console.log('error signing in', JSON.stringify(error));
