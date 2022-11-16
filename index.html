@@ -144,13 +144,13 @@
         <!-- Nav tabs -->
         <ul class="nav nav-pills mb-3" id="myTab" role="tablist" style="margin-top: 2%;">
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Customers</a>
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Users</a>
             </li>
             <li class="nav-item" role="presentation">
                 <a class="nav-link" id="identification-tab" data-bs-toggle="tab" href="#identification" role="tab" aria-controls="attendance" aria-selected="false">ID Extraction</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="attendance-tab" data-bs-toggle="tab" href="#attendance" role="tab" aria-controls="attendance" aria-selected="false">Transactions</a>
+                <a class="nav-link" id="attendance-tab" data-bs-toggle="tab" href="#attendance" role="tab" aria-controls="attendance" aria-selected="false">Add user</a>
             </li>
             <!--<li class="nav-item" role="presentation">
                 <a class="nav-link" id="audit-tab" data-bs-toggle="tab" href="#audit" role="tab" aria-controls="audit" aria-selected="false">Audit</a>
@@ -169,8 +169,8 @@
                                         <thead>
                                             <tr>
                                                 <!--<th data-field="facility" data-visible="false">Facility</th>-->
-                                                <th data-field="name">Customer Name</th>
-                                                <!--<th data-field="email">Email</th>-->
+                                                <th data-field="name">Name</th>
+                                                <th data-field="email">Email</th>
                                                 <th data-field="lastlogin" data-formatter="dateFormat">Last Login</th>
                                                 <!--<th data-field="createdtime" data-visible="false">createdtime</th>-->
                                             </tr>
@@ -186,28 +186,15 @@
             <div class="tab-pane fade" id="identification" role="tabpanel" aria-labelledby="identification-tab">
                 <!--<h3 class="mb-5"> eKYC Identification Data</h3>-->
                 <div class="container-fluid">
+                <center>
                     <div class="row">
                         <div style="width:40%;margin-top:5%;">
                                 <img style="width:500px;" id="idimage" class="rounded float-start" src="">
                         </div>
                         <div style="width:60%;" id="idtable"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-pane fade" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
-                <!--<h3 class="mb-5"> eKYC Information</h3>-->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div style="width:20%;">
-                            <div id="photocontainer">
-                                <img style="width:200px;" id="image" class="rounded float-start" src=""></div>
-                            <input type='file' id="newphoto" class="form-control-file" style="margin-top: 2%;" />
-                            <button id="uploadAphoto" class="btn btn-primary" style="margin-top: 2%;">Add Customer/User</button>
-                            <input type="hidden" id="currentId" value="" />
-                        </div>
-                        <div style="width:80%;">
-                            <center>
+                        <br/><br/>
+                        <div style="width:100%;">
+                            
                                 <div class="table-responsive-lg">
                                     <table id="attendancedata" class="table table-hover" style="width:80%;height: 60%;overflow-y: auto;">
                                         <thead>
@@ -221,8 +208,26 @@
                                         </thead>
                                     </table>
                                 </div>
-                            </center>
                         </div>
+                    </div>
+                </center>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
+                <!--<h3 class="mb-5"> eKYC Information</h3>-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <center>
+                        <div style="width:50%;">
+                            <div id="photocontainer">
+                                <img style="width:200px;" id="image" class="rounded float-start" src=""></div>
+                            <input type="file" id="newphoto" class="form-control-file" style="margin-top: 2%;" />
+                            <br/> <br/> email : <input type="text" id="newmail" class="form-control-file"  style="margin-top: 2%;"  />
+                            <br/> <br/><button id="uploadAphoto" class="btn btn-primary" style="margin-top: 2%;">Add User</button>
+                            <input type="hidden" id="currentId" value="" />
+                        </div>
+                        </center>
                     </div>
                 </div>
             </div>
@@ -265,11 +270,11 @@
                     <input type="email" id="username" class="form-control" placeholder="Email address" required autofocus>
                     <label for="inputPassword" class="visually-hidden">Enter your password</label> <br />
                     <input type="password" id="password" class="form-control" placeholder="Password" required> <br />
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <select class="form-control" id="type">
                             <option value="admin">Admin</option>
                             <option value="worker">Customer</option>
-                        </select></div><br />
+                        </select></div>--><br />
                     <button id="login" class="w-36 btn btn-lg btn-primary">Sign In</button>
                     <button id="signup" class="w-36 btn btn-lg btn-primary">Sign Up</button>
                 </form>
@@ -290,7 +295,7 @@
         function dateFormat(value, row, index) {
             var prettyDate = moment(value).format('D MMM YYYY h:mm:ss a');
             if (prettyDate === 'Invalid date') {
-                prettyDate = "New Customer";
+                prettyDate = "New User";
             }
             return prettyDate;
         }
